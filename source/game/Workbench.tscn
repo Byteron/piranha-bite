@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://graphics/workbench.png" type="Texture" id=1]
+[ext_resource path="res://source/game/Workbench.gd" type="Script" id=2]
+[ext_resource path="res://graphics/line.png" type="Texture" id=3]
+[ext_resource path="res://source/boxes/BoxRed.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/boxes/BoxBlue.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/boxes/BoxYellow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://graphics/machine.png" type="Texture" id=7]
+
+[node name="Workbench" type="Sprite"]
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="Line1" type="Sprite" parent="."]
+position = Vector2( 0, 60 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Line2" type="Sprite" parent="."]
+position = Vector2( 242.427, 60 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Boxes" type="Node2D" parent="."]
+
+[node name="BoxRed" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 20, 133 )
+
+[node name="BoxBlue" parent="Boxes" instance=ExtResource( 5 )]
+position = Vector2( 56, 133 )
+
+[node name="BoxYellow" parent="Boxes" instance=ExtResource( 6 )]
+position = Vector2( 92, 133 )
+
+[node name="FishContainer" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Machine" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 209, 0 )
+texture = ExtResource( 7 )
+centered = false
+

@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="Background" type="CanvasLayer"]
+editor/display_folded = true
+layer = -10
+
+[node name="Floor" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.815686, 0.698039, 0.384314, 1 )
+
+[node name="Line" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 408.0
+margin_bottom = -152.0
+color = Color( 0.435294, 0.478431, 0.494118, 1 )
+
