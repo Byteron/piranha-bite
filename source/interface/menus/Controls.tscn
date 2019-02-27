@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/interface/menus/Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/interface/menus/Controls.gd" type="Script" id=2]
+[ext_resource path="res://source/interface/button/Button.tscn" type="PackedScene" id=3]
+
+[node name="Controls" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Title" parent="." index="1"]
+text = "Controls"
+
+[node name="Content" parent="CenterContainer" index="0"]
+margin_left = 30.0
+margin_top = 25.0
+margin_right = 209.0
+margin_bottom = 64.0
+
+[node name="Label" type="Label" parent="CenterContainer/Content" index="0"]
+margin_right = 179.0
+margin_bottom = 39.0
+text = "[1] to put the FISH into the RED BOX
+[2] to put the FISH into the BLUE BOX
+[3] to put the FISH into the YELLOW BOX
+
+BEWARE: do NOT touch the PIRANHAS!
+They will bite off your FINGERS!"
+align = 1
+
+[node name="Back" parent="BackButton" index="0" instance=ExtResource( 3 )]
+margin_right = 80.0
+
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_Back_pressed"]

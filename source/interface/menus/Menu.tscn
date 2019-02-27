@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://graphics/fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://graphics/images/background.png" type="Texture" id=2]
+[ext_resource path="res://graphics/fonts/poco/Poco.ttf" type="DynamicFontData" id=3]
+
+
+
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+extra_spacing_top = -4
+extra_spacing_bottom = -4
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Title" type="Label" parent="."]
+margin_right = 240.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 240, 20 )
+custom_fonts/font = SubResource( 2 )
+text = "Title"
+align = 1
+valign = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+margin_bottom = -25.0
+
+[node name="Content" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 120.0
+margin_top = 45.0
+margin_right = 120.0
+margin_bottom = 45.0
+
+[node name="BackButton" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -25.0
+margin_right = 40.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 80, 20 )
+alignment = 1
+

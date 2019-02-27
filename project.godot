@@ -16,13 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Piranha Bites"
-run/main_scene="res://source/interface/Menu.tscn"
+run/main_scene="res://source/interface/menus/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://source/global/Global.tscn"
-Get="*res://source/global/Get.gd"
+Scene="*res://source/global/Scene.tscn"
+Board="*res://source/global/Board.gd"
 
 [display]
 
@@ -81,6 +81,7 @@ three={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 quality/intended_usage/framebuffer_allocation=0
 quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
