@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rattle.wav-c889ed4fa579144da2232cda72a51951.sample"
+
+[deps]
+
+source_file="res://audio/sounds/rattle.wav"
+dest_files=[ "res://.import/rattle.wav-c889ed4fa579144da2232cda72a51951.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

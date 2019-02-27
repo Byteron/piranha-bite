@@ -2,6 +2,9 @@ extends Node
 
 var Game = null
 
+var high_score = 0
+var score = 0
+
 var fish = [
 	preload("res://source/fish/Fish1.tscn"),
 	preload("res://source/fish/Fish2.tscn"),
