@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish-red.png-e4eb0de1cd93099c14893415f78a5dc7.stex"
+path="res://.import/box-red.png-b80775ab98745ef763dedce208c0636b.stex"
 
 [deps]
 
-source_file="res://graphics/images/fish-red.png"
-dest_files=[ "res://.import/fish-red.png-e4eb0de1cd93099c14893415f78a5dc7.stex" ]
+source_file="res://graphics/images/boxes/box-red.png"
+dest_files=[ "res://.import/box-red.png-b80775ab98745ef763dedce208c0636b.stex" ]
 
 [params]
 

@@ -2,20 +2,18 @@ extends Node2D
 
 signal bitten(finger_left)
 
+var current_fish = null
+
 onready var hand = $Hand
 onready var anim = $AnimationPlayer
 onready var audio = $AudioStreamPlayer
 
 onready var blood = $BloodParticles
 
-onready var pickup_space = $PickupSpace
-
 func grab():
 	anim.play("grab")
-	var current_fish = pickup_space.current_fish
-	if current_fish:
-		if current_fish.type == Board.FISH.PIRANHA:
-			_remove_finger()
+	if current_fish and current_fish.type == Board.FISH_TYPE.PIRANHA:
+		_remove_finger()
 	return current_fish
 
 func _remove_finger():
@@ -38,3 +36,9 @@ func _get_random_finger():
 	randomize()
 	var fingers = _get_fingers()
 	return fingers[randi() % fingers.size()]
+
+func _on_Area2D_area_entered(area):
+	current_fish = area
+
+func _on_Area2D_area_exited(area):
+	current_fish = null

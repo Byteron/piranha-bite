@@ -76,8 +76,9 @@ three={
 
 [layer_names]
 
-2d_physics/layer_2="PickupSpace"
+2d_physics/layer_2="Hand"
 2d_physics/layer_3="Fish"
+2d_physics/layer_4="FishCatcher"
 
 [rendering]
 

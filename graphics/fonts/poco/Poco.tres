@@ -2,7 +2,6 @@
 
 [ext_resource path="res://graphics/fonts/poco/Poco.ttf" type="DynamicFontData" id=1]
 
-
 [resource]
 size = 10
 extra_spacing_top = -4

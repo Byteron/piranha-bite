@@ -2,11 +2,9 @@
 
 [ext_resource path="res://source/core/hand/Hand.gd" type="Script" id=1]
 [ext_resource path="res://audio/sounds/damage.wav" type="AudioStream" id=2]
-[ext_resource path="res://source/core/hand/PickupSpace.tscn" type="PackedScene" id=3]
-[ext_resource path="res://graphics/images/hand.png" type="Texture" id=4]
-[ext_resource path="res://source/core/hand/Finger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://source/core/hand/BloodParticles.tscn" type="PackedScene" id=6]
-
+[ext_resource path="res://graphics/images/hand.png" type="Texture" id=3]
+[ext_resource path="res://source/core/hand/Finger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://source/core/hand/BloodParticles.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "grab"
@@ -37,6 +35,9 @@ tracks/1/keys = {
 "values": [ 0.0, 8.0, 23.0448, 28.0, 0.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23, 27 )
+
 [node name="Hand" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -46,31 +47,37 @@ anims/grab = SubResource( 1 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
-[node name="PickupSpace" parent="." instance=ExtResource( 3 )]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 18, 19 )
+shape = SubResource( 2 )
 
 [node name="Hand" type="Sprite" parent="."]
 editor/display_folded = true
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 centered = false
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Finger" parent="Hand" instance=ExtResource( 5 )]
+[node name="Finger" parent="Hand" instance=ExtResource( 4 )]
 
-[node name="Finger2" parent="Hand" instance=ExtResource( 5 )]
+[node name="Finger2" parent="Hand" instance=ExtResource( 4 )]
 position = Vector2( 9, 3 )
 
-[node name="Finger3" parent="Hand" instance=ExtResource( 5 )]
+[node name="Finger3" parent="Hand" instance=ExtResource( 4 )]
 position = Vector2( 15, 3 )
 
-[node name="Finger4" parent="Hand" instance=ExtResource( 5 )]
+[node name="Finger4" parent="Hand" instance=ExtResource( 4 )]
 position = Vector2( 21, 5 )
 
-[node name="Finger5" parent="Hand" instance=ExtResource( 5 )]
+[node name="Finger5" parent="Hand" instance=ExtResource( 4 )]
 position = Vector2( 28, 22 )
 
-[node name="BloodParticles" parent="." instance=ExtResource( 6 )]
+[node name="BloodParticles" parent="." instance=ExtResource( 5 )]
 scale = Vector2( 1, 1 )
 explosiveness = 0.1
 local_coords = false
@@ -78,3 +85,5 @@ emission_shape = 2
 emission_rect_extents = Vector2( 3, 3 )
 scale_amount = 2.0
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

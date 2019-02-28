@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fish-yellow.png-13c8c3f4c0901ca15bcd88dba65ab106.stex"
+path="res://.import/piranha.png-e3312a324e00ebadf61b9c5af3810955.stex"
 
 [deps]
 
-source_file="res://graphics/images/fish-yellow.png"
-dest_files=[ "res://.import/fish-yellow.png-13c8c3f4c0901ca15bcd88dba65ab106.stex" ]
+source_file="res://graphics/images/fish/piranha.png"
+dest_files=[ "res://.import/piranha.png-e3312a324e00ebadf61b9c5af3810955.stex" ]
 
 [params]
 
