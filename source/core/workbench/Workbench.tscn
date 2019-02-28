@@ -1,12 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://source/game/workbench/Workbench.gd" type="Script" id=1]
+[ext_resource path="res://source/core/workbench/Workbench.gd" type="Script" id=1]
 [ext_resource path="res://graphics/images/workbench.png" type="Texture" id=2]
-[ext_resource path="res://source/game/workbench/Line.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/core/workbench/Line.tscn" type="PackedScene" id=3]
 [ext_resource path="res://graphics/images/screen.png" type="Texture" id=4]
 [ext_resource path="res://graphics/images/machine.png" type="Texture" id=5]
-
-
 
 [node name="Workbench" type="Node2D"]
 script = ExtResource( 1 )

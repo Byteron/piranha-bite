@@ -6,11 +6,9 @@ onready var hand = $Hand
 onready var anim = $AnimationPlayer
 onready var audio = $AudioStreamPlayer
 
-onready var pickup_space = $PickupSpace
+onready var blood = $BloodParticles
 
-func _ready():
-	_remove_finger()
-	_remove_finger()
+onready var pickup_space = $PickupSpace
 
 func grab():
 	anim.play("grab")
@@ -25,8 +23,13 @@ func _remove_finger():
 	if hand.get_child_count() < 1:
 		return
 	var finger = _get_random_finger()
-	finger.free()
+	_cut_finger(finger)
 	emit_signal("bitten", hand.get_child_count())
+
+func _cut_finger(finger):
+	blood.position = finger.position
+	blood.emitting = true
+	finger.free()
 
 func _get_fingers():
 	return hand.get_children()

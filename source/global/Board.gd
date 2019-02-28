@@ -1,6 +1,7 @@
 extends Node
 
-enum FISH { FISH1, FISH2, FISH3, PIRANHA }
+enum FISH { RED, BLUE, YELLOW, PIRANHA }
 
+var score = 0
 var speed = 100
 

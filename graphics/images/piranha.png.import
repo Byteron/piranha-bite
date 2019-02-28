@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pirania-blue.png-0bff0fe14336571448134ac1d4dd4dda.stex"
+path="res://.import/piranha.png-c25fbf9f6961d1b1bfbeb42fa373cd28.stex"
 
 [deps]
 
-source_file="res://graphics/images/pirania-blue.png"
-dest_files=[ "res://.import/pirania-blue.png-0bff0fe14336571448134ac1d4dd4dda.stex" ]
+source_file="res://graphics/images/piranha.png"
+dest_files=[ "res://.import/piranha.png-c25fbf9f6961d1b1bfbeb42fa373cd28.stex" ]
 
 [params]
 

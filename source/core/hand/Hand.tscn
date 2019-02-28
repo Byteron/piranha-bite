@@ -1,12 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://source/game/hand/Hand.gd" type="Script" id=1]
+[ext_resource path="res://source/core/hand/Hand.gd" type="Script" id=1]
 [ext_resource path="res://audio/sounds/damage.wav" type="AudioStream" id=2]
-[ext_resource path="res://source/game/hand/PickupSpace.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/core/hand/PickupSpace.tscn" type="PackedScene" id=3]
 [ext_resource path="res://graphics/images/hand.png" type="Texture" id=4]
-[ext_resource path="res://graphics/images/finger.png" type="Texture" id=5]
-
-
+[ext_resource path="res://source/core/hand/Finger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://source/core/hand/BloodParticles.tscn" type="PackedScene" id=6]
 
 
 [sub_resource type="Animation" id=1]
@@ -57,28 +56,25 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Finger1" type="Sprite" parent="Hand"]
-position = Vector2( 0, -4 )
-texture = ExtResource( 5 )
-centered = false
+[node name="Finger" parent="Hand" instance=ExtResource( 5 )]
 
-[node name="Finger2" type="Sprite" parent="Hand"]
-position = Vector2( 6, -6 )
-texture = ExtResource( 5 )
-centered = false
+[node name="Finger2" parent="Hand" instance=ExtResource( 5 )]
+position = Vector2( 9, 3 )
 
-[node name="Finger3" type="Sprite" parent="Hand"]
-position = Vector2( 12, -6 )
-texture = ExtResource( 5 )
-centered = false
+[node name="Finger3" parent="Hand" instance=ExtResource( 5 )]
+position = Vector2( 15, 3 )
 
-[node name="Finger4" type="Sprite" parent="Hand"]
-position = Vector2( 18, -4 )
-texture = ExtResource( 5 )
-centered = false
+[node name="Finger4" parent="Hand" instance=ExtResource( 5 )]
+position = Vector2( 21, 5 )
 
-[node name="Finger5" type="Sprite" parent="Hand"]
-position = Vector2( 25, 12 )
-texture = ExtResource( 5 )
-centered = false
+[node name="Finger5" parent="Hand" instance=ExtResource( 5 )]
+position = Vector2( 28, 22 )
+
+[node name="BloodParticles" parent="." instance=ExtResource( 6 )]
+scale = Vector2( 1, 1 )
+explosiveness = 0.1
+local_coords = false
+emission_shape = 2
+emission_rect_extents = Vector2( 3, 3 )
+scale_amount = 2.0
 

@@ -5,15 +5,16 @@ onready var hand = $Hand
 func _unhandled_input(event):
 	if event.is_action_pressed("one"):
 		_sort_fish(0)
-	if event.is_action_pressed("two"):
+	elif event.is_action_pressed("two"):
 		_sort_fish(1)
-	if event.is_action_pressed("three"):
+	elif event.is_action_pressed("three"):
 		_sort_fish(2)
+	
+	if event.is_action_pressed("ui_cancel"):
+		Scene.change(Scene.TitleScreen)
 
 func _sort_fish(box_type):
 	var current_fish = hand.grab()
 	
 	if not current_fish:
 		return
-	
-	

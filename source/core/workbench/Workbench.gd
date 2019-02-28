@@ -11,12 +11,17 @@ func _ready():
 	speed = Board.speed
 
 func _process(delta):
-	_move_lines(delta)
+	_move_lines(speed * delta)
+	_move_fish(speed * delta)
 	_reset_lines()
 
-func _move_lines(delta):
+func _move_lines(motion):
 	for line in lines:
-		line.position.x -= speed * delta
+		line.position.x -= motion
+
+func _move_fish(motion):
+	for fish in fish_container.get_children():
+		fish.position.x -= motion
 
 func _reset_lines():
 	for line in lines:
