@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/piranha.png-e3312a324e00ebadf61b9c5af3810955.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

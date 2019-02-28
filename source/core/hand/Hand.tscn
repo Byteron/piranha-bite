@@ -46,6 +46,7 @@ anims/grab = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "Sounds"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
