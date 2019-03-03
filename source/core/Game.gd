@@ -60,6 +60,5 @@ func _on_Shop_sold(revenue):
 func _on_Shop_mistake_made():
 	_mistake_made()
 
-func _on_FishCatcher_fish_missed(fish_type):
-	if not fish_type == Board.FISH_TYPE.PIRANHA:
-		_mistake_made()
+func _on_FishCatcher_fish_missed():
+	_mistake_made()

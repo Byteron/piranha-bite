@@ -28,17 +28,26 @@ func _load_score_data():
 	
 	var dict = parse_json(file.get_as_text())
 	
-	score = dict.last_score
-	high_score = dict.high_score
+	score = dict.game.last_score
+	high_score = dict.game.high_score
+	
+	AudioServer.set_bus_volume_db(1, dict.options.music_volume_db)
+	AudioServer.set_bus_volume_db(2, dict.options.effects_volume_db)
 	
 	file.close()
 	
 func _save_score_data():
 	var file = File.new()
-	var dict = {}
+	var dict = {
+		game = {},
+		options = {}
+	}
 	
-	dict.high_score = high_score
-	dict.last_score = score
+	dict.game.high_score = high_score
+	dict.game.last_score = score
+	
+	dict.options.music_volume_db = AudioServer.get_bus_volume_db(1)
+	dict.options.effects_volume_db = AudioServer.get_bus_volume_db(2)
 	
 	file.open("user://score.save", File.WRITE)
 	file.store_string(to_json(dict))

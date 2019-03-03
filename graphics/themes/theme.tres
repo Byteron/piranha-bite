@@ -1,8 +1,25 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=4 format=2]
 
-[ext_resource path="res://graphics/fonts/poco/Poco.tres" type="DynamicFont" id=1]
+[ext_resource path="res://graphics/images/slider.png" type="Texture" id=1]
+[ext_resource path="res://graphics/fonts/poco/Poco.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxLine" id=1]
+content_margin_top = 0.0
+content_margin_bottom = 2.0
+color = Color( 1, 0.894118, 0.65098, 1 )
+grow_begin = -1.0
+grow_end = -1.0
+thickness = 3
 
 [resource]
-default_font = ExtResource( 1 )
-Label/fonts/ = null
+default_font = ExtResource( 2 )
+HSlider/icons/grabber = ExtResource( 1 )
+HSlider/icons/grabber_disabled = ExtResource( 1 )
+HSlider/icons/grabber_highlight = ExtResource( 1 )
+HSlider/icons/tick = ExtResource( 1 )
+HSlider/styles/focus = null
+HSlider/styles/grabber_area = SubResource( 1 )
+HSlider/styles/grabber_disabled = null
+HSlider/styles/grabber_highlight = null
+HSlider/styles/slider = SubResource( 1 )
 
